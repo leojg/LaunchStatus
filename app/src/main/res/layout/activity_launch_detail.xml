@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
+
+
+    <data>
+        <import type="android.view.View"/>
+
+        <variable name="launch" type="example.lgcode.launchstatus.dtos.LaunchDTO"/>
+        <variable name="view" type="example.lgcode.launchstatus.views.LaunchDetailView"/>
+        <variable name="statusUtils" type="example.lgcode.launchstatus.utils.LaunchStatusUtils" />
+
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/detail_appbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/detail_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:title="@{launch.name}"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/LaunchDetailItem.Container"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                style="@style/LaunchDetailItem.Mission"
+                android:id="@+id/mission_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                style="@style/LaunchDetailItem.MissionLabel"
+                android:id="@+id/mission_label"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@{launch.missions.get(0).name, default=LE_NAME}"
+                />
+                <TextView
+                style="@style/LaunchDetailItem.MissionValue"
+                android:id="@+id/mission_value"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@{launch.missions.get(0).description, default=LE_DESCRIPTION}"
+                />
+            </LinearLayout>
+
+                <LinearLayout
+                android:id="@+id/status_data"
+                android:layout_below="@id/mission_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                style="@style/LaunchDetailItem.Status.Label"
+                android:id="@+id/status_label"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Status"/>
+                <TextView
+                style="@style/LaunchDetailItem.Status.Value"
+                android:id="@+id/status_value"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:textStatus="@{launch.status}"/>
+
+            </LinearLayout>
+
+                <RelativeLayout
+                style="@style/LaunchDetailItem.WatchLaunchContainer"
+                android:visibility="@{launch.vidURLs.empty ? View.GONE : View.VISIBLE }"
+                android:id="@+id/live_broadcast"
+                android:layout_below="@id/status_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+                <TextView
+                style="@style/LaunchDetailItem.WatchLaunchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Watch Launch"
+                android:onClick="@{view.onClick}"
+                android:textAlignment="center"
+                android:layout_alignParentEnd="true"
+                />
+            </RelativeLayout>
+
+                <!-- <LinearLayout
+                    android:id="@+id/agency_data_container"
+                    android:layout_below="@id/live_broadcast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <include
+                        android:id="@+id/agency_data"
+                        layout="@layout/horizontal_info_box"
+                        />
+                </LinearLayout> -->
+
+            <LinearLayout
+                style="@style/HorizontalInfoBoxContainer"
+                android:id="@+id/launch_window_data_container"
+                android:layout_below="@id/live_broadcast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                <include
+                    android:id="@+id/launch_window_data"
+                    layout="@layout/horizontal_info_box"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/HorizontalInfoBoxContainer"
+                android:id="@+id/rocket_data_container"
+                android:layout_below="@id/launch_window_data_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                <include
+                android:id="@+id/rocket_data"
+                layout="@layout/horizontal_info_box"
+                />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/HorizontalInfoBoxContainer"
+                android:id="@+id/location_data_container"
+                android:layout_below="@id/rocket_data_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+                <include
+                android:id="@+id/location_data"
+                layout="@layout/horizontal_info_box"
+                />
+            </LinearLayout>
+
+</RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

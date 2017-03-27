@@ -1,0 +1,109 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoTitle">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="LaunchListContainer">
+        <item name="android:background">@color/itemBackground</item>
+    </style>
+
+    <style name="LaunchListItem">
+        <item name="android:textColor">@color/itemTextColor</item>
+    </style>
+
+    <style name="LaunchListItem.TextView">
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="LaunchListItem.TextView.Name">
+        <item name="android:textSize">20dp</item>
+    </style>
+
+
+    <style name="LaunchListItem.StatusView">
+        <item name="android:background">@color/statusFail</item>
+    </style>
+
+    <style name="LaunchDetailItem">
+        <item name="android:textColor">@color/itemTextColorLight</item>
+    </style>
+
+    <style name="LaunchDetailItem.Container">
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:background">@color/containerBackground</item>
+    </style>
+
+    <style name="LaunchDetailItem.Mission">
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="LaunchDetailItem.MissionLabel">
+        <item name="android:textSize">25dp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="LaunchDetailItem.MissionValue">
+        <item name="android:textSize">15dp</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+    </style>
+
+    <style name="LaunchDetailItem.Status" parent="LaunchDetailItem">
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="LaunchDetailItem.Status.Label">
+        <item name="android:paddingRight">15dp</item>
+    </style>
+
+    <style name="LaunchDetailItem.Status.Value">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="LaunchDetailItem.WatchLaunchContainer">
+        <item name="android:paddingBottom">15dp</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+
+    <style name="LaunchDetailItem.WatchLaunchButton">
+        <item name="android:background">@color/colorAccent</item>
+        <item name="android:textColor">@color/itemTextColor</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="HorizontalInfoBoxContainer">
+        <item name="android:paddingBottom">10dp</item>
+    </style>
+
+    <style name="HorizontalInfoBox" parent="LaunchListItem">
+        <item name="android:textSize">18dp</item>
+        <item name="android:textColor">@color/itemTextColorLight</item>
+    </style>
+
+    <style name="HorizontalInfoBox.Label">
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+    <style name="HorizontalInfoBox.Value">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+</resources>

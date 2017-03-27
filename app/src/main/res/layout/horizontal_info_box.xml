@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="label" type="String"/>
+        <variable name="value" type="String"/>
+    </data>
+
+    <merge
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            style="@style/HorizontalInfoBox.Label"
+            android:id="@+id/label_box"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{label, default=TEXTTITLE}" />
+        <TextView
+            style="@style/HorizontalInfoBox.Value"
+            android:id="@+id/value_box"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@{value, default=TEXTVAL}" />
+
+    </merge>
+</layout>
